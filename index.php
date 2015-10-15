@@ -5,13 +5,10 @@
     echo "<br/>";
     echo $pie;
     echo "<br/>";
-    system ("ls", $lista);
-    echo $lsita;
-    echo "<br/>";
-    system ("echo ".$encabezado. " >> ejemlo.txt", $ejemplo);
-    echo "<br/>";
-    echo $ejemplo;
-    system ("touch ejemplo.txt", $ejemplo);
-    echo "<br/>";
-    echo $ejemplo;
+    system ("cp prueba.svg oficios/1.svg", $result);
+    if ($result==0) echo "copia realizada con exito";
+    system ("echo $(sed s=\"__Encabezado__\"=\"$encabezado\"= oficios/1.svg) > oficios/1.svg", $result);
+    if ($result==0) echo "sustitución realizada con exito";
+    system ("inkscape -A oficios/1.pdf oficios/1.svg", $result);
+    if ($result==0) echo "archivo creado con exito";
 ?>
