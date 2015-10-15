@@ -1,6 +1,6 @@
 <?php
     $file = $_POST["nombre"];
-    $encabezado = $_POST["encabezado"];
+    $encabezado = "\"__Encabezado__\"=\"".$_POST["encabezado"]."\"";
     $pie = $_POST["pie"];
     
     echo $encabezado."<br/>";
@@ -8,7 +8,7 @@
     
     system ("cp formato/prueba.svg oficio/$file.svg", $result);
     if ($result==0) echo "copia realizada con exito<br/>";
-    system ("echo $(sed s=\"__Encabezado__\"=\"$encabezado\"= oficio/$file.svg) > oficio/$file.svg", $result);
+    system ("echo $(sed s=$encabezado= oficio/$file.svg) > oficio/$file.svg", $result);
     if ($result==0) echo "sustitucion realizada con exito<br/>";
     system ("inkscape -A oficio/$file.pdf oficio/$file.svg", $result);
     if ($result==0) echo "archivo creado con exito<br/>";
