@@ -32,6 +32,8 @@ puts "Hola mundo desde Ruby " + RUBY_VERSION
 
 puts "<FORM method=post action=index.php>"
 echo()
+Nombre = Input.new("nombre","text")
+echo()
 Encabezado = Input.new("encabezado", "text")
 echo()
 Pie = Input.new("pie","text")
