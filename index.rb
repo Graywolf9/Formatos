@@ -30,7 +30,14 @@ puts
 
 puts "Hola mundo desde Ruby " + RUBY_VERSION
 
-puts "<FORM method=post action=index.php>"
+puts "<FORM id='formulario' method=post action=index.php>"
+puts "
+    <SELECT id='tipo' name='tipo' onKeyup='destino()'>
+        <OPTION value='prueba'>Prueba</OPTION>
+    </SELECT>
+"
+echo()
+Oficio = Input.new("oficio","number")
 echo()
 Nombre = Input.new("nombre","text")
 echo()
@@ -40,3 +47,10 @@ Pie = Input.new("pie","text")
 echo()
 Enviar = Input.new("enviar", "submit", "Crear")
 puts "</FORM>"
+puts "
+    <script>
+        function destino(){
+            document.getElementById('formulario').action = '/Formatos/formato.php/prueba.php';
+        }
+    </script>
+"
