@@ -30,10 +30,11 @@ puts
 
 puts "Hola mundo desde Ruby " + RUBY_VERSION
 
-puts "<FORM id='formulario' method=post action=index.php>"
+puts "<FORM id='formulario' method=post action=formato.php/prueba.php>"
 puts "
-    <SELECT id='tipo' name='tipo' onKeyup='destino()'>
+    <SELECT id='tipo' name='tipo' onChange='destino()'>
         <OPTION value='prueba'>Prueba</OPTION>
+        <OPTION value='prueba1'>Prueba</OPTION>
     </SELECT>
 "
 echo()
@@ -50,7 +51,8 @@ puts "</FORM>"
 puts "
     <script>
         function destino(){
-            document.getElementById('formulario').action = '/Formatos/formato.php/prueba.php';
+            var formato = document.getElementById('tipo').value;
+            document.getElementById('formulario').action = '/Formatos/formato.php/'+formato+'.php';
         }
     </script>
 "
